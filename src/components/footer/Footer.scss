@@ -1,0 +1,13 @@
+@use './../../styles/abstracts';
+
+.footer {
+    display: flex;
+    background-color: abstracts.$lightGreen;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: abstracts.$black;
+    font-size: abstracts.$heading3;
+    padding: 10px;
+}
