@@ -10,15 +10,15 @@ const Landing: FC = () => {
             <Container className="box-container">
                 {userLoggedIn ? (
                     <Title order={5}>
-                        Hi, you are signed in as {currentUser.email}. This Encyclopedia tries to display all the Star
-                        Wars data: Planets, Spaceships, Vehicles, People, Films and Species. The data displayed is
-                        collected from the 7 Star Wars films released till 2015
+                        Hi, you are signed in as {currentUser.email}. This Web Application intends to display all the
+                        Star Wars data: Planets, Spaceships, Vehicles, People, Films and Species. The data displayed is
+                        collected from the 7 Star Wars films released till 2015.
                     </Title>
                 ) : (
                     <Title order={5}>
-                        This Encyclopedia tries to display all the Star Wars data: Planets, Spaceships, Vehicles,
+                        This Web Application intends to display all the Star Wars data: Planets, Spaceships, Vehicles,
                         People, Films and Species. The data displayed is collected from the 7 Star Wars films released
-                        till 2015
+                        till 2015. To Access the data, please login or register using the Login Button above.
                     </Title>
                 )}
             </Container>

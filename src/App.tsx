@@ -30,7 +30,7 @@ export default function App() {
         <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
             <Container className="blue-div header-container">
                 <div className="header-title" onClick={() => navigateToRoute('/')}>
-                    Star Wars Encyclopedia
+                    Star Wars Database
                 </div>
                 <div className="navigation-links">
                     {userLoggedIn ? (
