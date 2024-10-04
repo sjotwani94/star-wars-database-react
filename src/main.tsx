@@ -8,6 +8,7 @@ import Login from './pages/authentication/Login';
 import Registration from './pages/authentication/Registration';
 import CharactersList from './pages/characters-list/CharactersList';
 import Landing from './pages/landing/Landing';
+import MoviesList from './pages/movies-list/MoviesList';
 import PlanetDetails from './pages/planet-details/PlanetDetails';
 
 export const routes = [
@@ -30,6 +31,10 @@ export const routes = [
             {
                 path: '/characters',
                 element: <CharactersList />,
+            },
+            {
+                path: '/movies',
+                element: <MoviesList />,
             },
             {
                 path: '/planet-details/:planetNumber',

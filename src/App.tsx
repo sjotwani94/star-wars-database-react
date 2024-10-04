@@ -50,7 +50,7 @@ export default function App() {
                                 rightSection={
                                     <IconChevronRight size="0.8rem" stroke={1.5} className="mantine-rotate-rtl" />
                                 }
-                                onClick={() => navigateToRoute('/characters')}
+                                onClick={() => navigateToRoute('/movies')}
                                 variant="filled"
                                 active
                             />

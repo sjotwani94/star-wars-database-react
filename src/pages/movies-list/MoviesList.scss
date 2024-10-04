@@ -1,0 +1,25 @@
+@use '../../styles/abstracts';
+
+.movie-details {
+    height: 100%;
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+
+    &-container {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .opening-crawl-container {
+            font-size: abstracts.$paragraph2;
+            color: abstracts.$midpurple;
+        }
+
+        .mantine-1okxtny {
+            color: abstracts.$darkPurple;
+        }
+    }
+}
