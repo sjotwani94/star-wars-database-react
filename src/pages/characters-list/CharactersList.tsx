@@ -111,36 +111,43 @@ const CharactersList: FC = () => {
     }
 
     return userLoggedIn ? (
-        <Container className="characters-list-container">
-            <Pagination value={activePage} onChange={fetchCharactersList} total={noOfPages} />
-            <Table
-                striped
-                className="characters-list-table"
-                highlightOnHover
-                sx={{
-                    width: '1400px',
-                }}
-            >
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Height</th>
-                        <th>Mass</th>
-                        <th>Hair Color</th>
-                        <th>Skin Color</th>
-                        <th>Eye Color</th>
-                        <th>Birth Year</th>
-                        <th>Gender</th>
-                        <th>Home World</th>
-                        <th>No. of Films</th>
-                        <th>No. of Species</th>
-                        <th>No. of Vehicles</th>
-                        <th>No. of Starships</th>
-                    </tr>
-                </thead>
-                <tbody className="characters-list-table-body">{rows}</tbody>
-            </Table>
-        </Container>
+        <div>
+            <Pagination
+                className="pagination-for-characters-list"
+                value={activePage}
+                onChange={fetchCharactersList}
+                total={noOfPages}
+            />
+            <Container className="characters-list-container">
+                <Table
+                    striped
+                    className="characters-list-table"
+                    highlightOnHover
+                    sx={{
+                        width: '1400px',
+                    }}
+                >
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Height</th>
+                            <th>Mass</th>
+                            <th>Hair Color</th>
+                            <th>Skin Color</th>
+                            <th>Eye Color</th>
+                            <th>Birth Year</th>
+                            <th>Gender</th>
+                            <th>Home World</th>
+                            <th>No. of Films</th>
+                            <th>No. of Species</th>
+                            <th>No. of Vehicles</th>
+                            <th>No. of Starships</th>
+                        </tr>
+                    </thead>
+                    <tbody className="characters-list-table-body">{rows}</tbody>
+                </Table>
+            </Container>
+        </div>
     ) : (
         <Navigate to={'/login'} replace={true} />
     );

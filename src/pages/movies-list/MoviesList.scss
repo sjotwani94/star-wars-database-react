@@ -3,15 +3,37 @@
 .movie-details {
     height: 100%;
     width: 100%;
-    padding: 100px;
+    padding: 80px;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 1024px) {
+        padding: 50px;
+    }
+
+    &-carousel {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mantine-1taon4l {
+            filter: none !important;
+            -webkit-filter: none !important;
+        }
+    }
 
     &-container {
         width: 600px;
         display: flex;
         flex-direction: column;
         gap: 10px;
+        overflow-y: scroll;
+        scrollbar-width: none;
 
         .opening-crawl-container {
             font-size: abstracts.$paragraph2;

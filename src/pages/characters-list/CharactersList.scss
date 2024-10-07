@@ -1,11 +1,15 @@
+.pagination-for-characters-list {
+    padding: 15px 60px;
+}
 .characters-list-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 10px;
     margin: 0 50px;
-    //overflow-x: scroll;
-    //width: 100%;
+    overflow-x: scroll;
+    max-width: 100%;
+    scrollbar-width: none;
 
     .characters-list-table {
         border-radius: 5px;
