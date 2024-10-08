@@ -30,6 +30,10 @@
         padding: 10px 50px;
         max-width: 100%;
 
+        @media (max-width: 924px) {
+            flex-direction: column;
+        }
+
         .header-title {
             color: abstracts.$greypurple;
             font-size: abstracts.$heading2;
@@ -38,6 +42,10 @@
         .navigation-links {
             display: flex;
             gap: 10px;
+
+            @media (max-width: 576px) {
+                flex-direction: column;
+            }
         }
     }
 }

@@ -1,5 +1,15 @@
-import { Alert, BackgroundImage, Button, NavLink, Paper, PasswordInput, TextInput } from '@mantine/core';
+import {
+    Alert,
+    BackgroundImage,
+    Button,
+    LoadingOverlay,
+    NavLink,
+    Paper,
+    PasswordInput,
+    TextInput,
+} from '@mantine/core';
 import { IconAlertCircle, IconAt, IconHome2, IconLock } from '@tabler/icons-react';
+import { FirebaseError } from 'firebase/app';
 import { FC, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext/AuthContext';
@@ -20,7 +30,14 @@ const Login: FC = () => {
                 setErrorMessage('Please fill out the required details!');
             } else {
                 setIsSigningIn(true);
-                await doSignInWithEmailAndPassword(email, password);
+                try {
+                    await doSignInWithEmailAndPassword(email, password);
+                } catch (error) {
+                    setIsSigningIn(false);
+                    if (error instanceof FirebaseError) {
+                        setErrorMessage(error.message);
+                    }
+                }
             }
         }
     };
@@ -37,6 +54,7 @@ const Login: FC = () => {
                 src="https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png"
             >
                 <Paper className="login-form-container" shadow="xs" p="xl">
+                    <LoadingOverlay visible={isSigningIn} overlayBlur={2} />
                     <div className="title">Login</div>
                     {!!errorMessage && (
                         <Alert icon={<IconAlertCircle size="1rem" />} title="Error!" color="red">

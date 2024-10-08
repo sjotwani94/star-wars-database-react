@@ -12,13 +12,13 @@ const Landing: FC = () => {
                     <Title order={5}>
                         Hi, you are signed in as {currentUser.email}. This Web Application intends to display all the
                         Star Wars data: Planets, Spaceships, Vehicles, People, Films and Species. The data displayed is
-                        collected from the 7 Star Wars films released till 2015.
+                        collected from the 6 Star Wars films released till 2005.
                     </Title>
                 ) : (
                     <Title order={5}>
                         This Web Application intends to display all the Star Wars data: Planets, Spaceships, Vehicles,
-                        People, Films and Species. The data displayed is collected from the 7 Star Wars films released
-                        till 2015. To Access the data, please login or register using the Login Button above.
+                        People, Films and Species. The data displayed is collected from the 6 Star Wars films released
+                        till 2005. To Access the data, please login or register using the Login Button above.
                     </Title>
                 )}
             </Container>
@@ -27,7 +27,7 @@ const Landing: FC = () => {
                     <div className="title">Characters List Page</div>
                     <div>
                         Click on the Characters Link above in the navigation bar to display the list of Characters
-                        included in all the 7 Star Wars Films
+                        included in all the 6 Star Wars Films
                     </div>
                 </Paper>
                 <Paper className="informative-paper" shadow="xs" p="xl">
@@ -41,7 +41,7 @@ const Landing: FC = () => {
                     <div className="title">Movies List Page</div>
                     <div>
                         Clicking on the Movies Link above in the navigation bar will display the list of Star War Films
-                        released till 2015.
+                        released till 2005.
                     </div>
                 </Paper>
             </div>
