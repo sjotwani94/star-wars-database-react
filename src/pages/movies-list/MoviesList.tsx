@@ -4,18 +4,22 @@ import {
     Avatar,
     BackgroundImage,
     Badge,
+    Button,
     Card,
     Divider,
     Group,
     Image,
     List,
+    Modal,
     Spoiler,
     Text,
     ThemeIcon,
 } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { IconAlertCircle, IconCalendarTime, IconChairDirector, IconMovie, IconVideoPlus } from '@tabler/icons-react';
 import { FC, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import ListOfPlanets from '../../components/list-of-planets/ListOfPlanets';
 import LoadingBars from '../../components/loader/LoadingBars';
 import { useAuth } from '../../contexts/AuthContext/AuthContext';
 import { MovieDetails } from '../../models/MovieDetails';
@@ -44,6 +48,7 @@ const MoviesList: FC = () => {
         setMoviesList: state.setMoviesList,
     }));
     const [embla, setEmbla] = useState<Embla | null>(null);
+    const [opened, { open, close }] = useDisclosure(false);
 
     useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 
@@ -176,6 +181,20 @@ const MoviesList: FC = () => {
                             </List.Item>
                         </List>
                         <Divider></Divider>
+                        <Text weight={400}>Planets Featured:</Text>
+                        <Modal
+                            size="xl"
+                            opened={opened}
+                            onClose={close}
+                            title="List Of Planets (Click on any row to view more details)"
+                            centered
+                        >
+                            <ListOfPlanets planets={moviesList[currentPage].planets}></ListOfPlanets>
+                        </Modal>
+
+                        <Group position="center">
+                            <Button onClick={open}>View List Of Planets</Button>
+                        </Group>
                     </Card>
                 </div>
             ) : (

@@ -19,6 +19,12 @@ const Registration: FC = () => {
         if (!isRegistering) {
             if (email === '' || password === '' || confirmPassword === '') {
                 setErrorMessage('Please fill out the required details!');
+            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                setErrorMessage('Please enter a valid E-mail ID!');
+            } else if (
+                !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/.test(password)
+            ) {
+                setErrorMessage('Please enter a valid Password!');
             } else if (password !== confirmPassword) {
                 setErrorMessage('Passwords do not match!');
             } else {
@@ -66,7 +72,7 @@ const Registration: FC = () => {
                         icon={<IconLock size="1rem" />}
                         placeholder="Password"
                         label="Password"
-                        description="Password must include at least one letter, number and special character"
+                        description="Password should be of minimum 8 characters, and must include at least one letter, number and special character"
                         value={password}
                         onChange={(e) => {
                             setErrorMessage('');

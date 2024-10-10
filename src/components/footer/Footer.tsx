@@ -9,6 +9,8 @@ const Footer: FC = () => (
         <ThemeIcon color="indigo">
             <IconHeart style={{ width: '70%', height: '70%' }} />
         </ThemeIcon>
+        &nbsp;
+        <a href="https://www.linkedin.com/in/siddharth-jotwani-1a835a166">Siddharth Jotwani</a>
     </footer>
 );
 

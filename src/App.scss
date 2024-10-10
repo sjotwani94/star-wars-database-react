@@ -18,7 +18,8 @@
         h3 {
             font-size: clamp(1.2rem, 1.8vw, 3rem);
         }
-        p {
+        p,
+        a {
             font-size: clamp(1.1rem, 1.2vw, 2rem);
         }
     }
